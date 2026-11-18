@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bamschoul Becker | Pépinière & Architecture Paysagère au Luxembourg (Steinsel)</title>
+  <meta name="description" content="Depuis 1880, Bamschoul Becker est la référence au Luxembourg : pépinière de 12 hectares, conception de jardins 3D, maçonnerie paysagère et entretien à Steinsel.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN with configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f2f8f4',
+              100: '#e1efe6',
+              200: '#c5dfd0',
+              300: '#9bc6b1',
+              400: '#6ca88d',
+              500: '#468b6e',
+              600: '#347057',
+              700: '#2a5845',
+              800: '#1d3c30', // Deep luxury forest
+              900: '#12261e',
+              950: '#08140f',
+            },
+            terracotta: {
+              400: '#e58e65',
+              500: '#d77042',
+              600: '#c05629',
+            },
+            gold: {
+              400: '#e2ba6d',
+              500: '#cf9e42',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom subtle animations and slider styles */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .glass-dark {
+      background: rgba(18, 38, 30, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    /* Comparison slider */
+    .before-after-container {
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+    }
+    .before-after-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- TOP BAR: Status & Multi-language -->
+  <div class="bg-brand-950 text-brand-100 text-xs py-2 px-4 border-b border-brand-800/40">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div class="flex items-center space-x-4">
+        <span class="inline-flex items-center gap-1.5 font-medium text-emerald-400">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span id="txt-status">Pépinière ouverte aujourd'hui jusqu'à 17h00</span>
+        </span>
+        <span class="hidden md:inline text-brand-300">|</span>
+        <span class="hidden md:inline text-stone-300 flex items-center gap-1">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-400"></i> Steinsel, Luxembourg
+        </span>
+      </div>
+      
+      <div class="flex items-center space-x-4">
+        <a href="tel:+352337363" class="hover:text-white transition flex items-center gap-1 font-semibold text-brand-200">
+          <i data-lucide="phone" class="w-3.5 h-3.5"></i> +352 33 73 63
+        </a>
+        <div class="border-l border-brand-800 pl-3 flex items-center space-x-1.5 font-medium">
+          <button onclick="setLanguage('fr')" class="lang-btn px-1.5 py-0.5 rounded text-white bg-brand-800 text-[11px]" id="btn-fr">FR</button>
+          <button onclick="setLanguage('de')" class="lang-btn px-1.5 py-0.5 rounded text-stone-300 hover:text-white text-[11px]" id="btn-de">DE</button>
+          <button onclick="setLanguage('lu')" class="lang-btn px-1.5 py-0.5 rounded text-stone-300 hover:text-white text-[11px]" id="btn-lu">LU</button>
+          <button onclick="setLanguage('en')" class="lang-btn px-1.5 py-0.5 rounded text-stone-300 hover:text-white text-[11px]" id="btn-en">EN</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stone-200/80 transition-all duration-200" id="main-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-12 h-12 rounded-xl bg-brand-800 text-brand-100 flex items-center justify-center shadow-md group-hover:bg-brand-700 transition">
+          <i data-lucide="trees" class="w-7 h-7 text-emerald-300"></i>
+        </div>
+        <div>
+          <span class="block font-serif text-2xl font-bold tracking-tight text-brand-900 group-hover:text-brand-700 transition">Bamschoul Becker</span>
+          <span class="block text-[11px] font-semibold uppercase tracking-wider text-stone-500">Pépinière & Aménagement paysager • Depuis 1880</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-stone-700">
+        <a href="#projets-becker" class="hover:text-brand-700 transition flex items-center gap-1 text-emerald-800 font-bold" id="nav-projets">
+          <i data-lucide="camera" class="w-3.5 h-3.5"></i>
+          <span>Chantiers Réels</span>
+        </a>
+        <a href="#pepiniere" class="hover:text-brand-700 transition" id="nav-pepiniere">Pépinière (12 ha)</a>
+        <a href="#services" class="hover:text-brand-700 transition" id="nav-services">Paysagisme & 3D</a>
+        <a href="#catalogue" class="hover:text-brand-700 transition" id="nav-catalogue">Végétaux & Arbres</a>
+        <a href="#rent-tree" class="hover:text-brand-700 transition flex items-center gap-1.5" id="nav-rent">
+          <span>Rent-a-Xmas-Tree</span>
+          <span class="bg-emerald-100 text-emerald-800 text-[10px] px-1.5 py-0.5 rounded-full font-bold">Éco</span>
+        </a>
+        <a href="#histoire" class="hover:text-brand-700 transition" id="nav-histoire">Notre Histoire</a>
+        <a href="#contact" class="hover:text-brand-700 transition" id="nav-contact">Accès & Horaires</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden sm:flex items-center space-x-3">
+        <a href="#simulateur" class="inline-flex items-center gap-2 bg-brand-800 hover:bg-brand-700 text-white px-4 py-2.5 rounded-lg text-sm font-semibold shadow-sm hover:shadow transition transform active:scale-95">
+          <i data-lucide="calculator" class="w-4 h-4 text-emerald-300"></i>
+          <span id="btn-simulateur-nav">Estimer mon projet</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button onclick="toggleMobileMenu()" class="lg:hidden p-2 text-stone-600 hover:text-stone-900 rounded-lg">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-stone-200 px-4 pt-3 pb-6 space-y-3">
+      <a href="#projets-becker" onclick="toggleMobileMenu()" class="block py-2 text-emerald-800 font-bold flex items-center gap-2">
+        <i data-lucide="camera" class="w-4 h-4"></i>
+        <span>Chantiers Réels Bamschoul Becker</span>
+      </a>
+      <a href="#pepiniere" onclick="toggleMobileMenu()" class="block py-2 text-stone-700 font-medium">Pépinière (12 hectares)</a>
+      <a href="#services" onclick="toggleMobileMenu()" class="block py-2 text-stone-700 font-medium">Création & Aménagement 3D</a>
+      <a href="#catalogue" onclick="toggleMobileMenu()" class="block py-2 text-stone-700 font-medium">Catalogue Végétaux</a>
+      <a href="#rent-tree" onclick="toggleMobileMenu()" class="block py-2 text-stone-700 font-medium">Rent-a-Xmas-Tree (Sapins en location)</a>
+      <a href="#histoire" onclick="toggleMobileMenu()" class="block py-2 text-stone-700 font-medium">140 ans de savoir-faire</a>
+      <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-stone-700 font-medium">Accès Steinsel & Horaires</a>
+      <div class="pt-2">
+        <a href="#simulateur" onclick="toggleMobileMenu()" class="w-full inline-flex justify-center items-center gap-2 bg-brand-800 text-white py-3 rounded-lg font-semibold">
+          <i data-lucide="calculator" class="w-4 h-4 text-emerald-300"></i>
+          <span>Estimer mon projet en 2 min</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[640px] lg:min-h-[720px] flex items-center bg-brand-950 text-white overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=2000&auto=format&fit=crop" 
+           alt="Jardin d'exception et pépinière Becker à Steinsel" 
+           class="w-full h-full object-cover object-center filter brightness-[0.45] scale-105 transition duration-1000">
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-950/70 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+      <div class="max-w-2xl">
+        
+        <!-- Badge Heritage -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-800/80 border border-brand-500/40 text-emerald-300 text-xs font-semibold uppercase tracking-wider mb-6 backdrop-blur">
+          <i data-lucide="award" class="w-4 h-4"></i>
+          <span id="hero-badge">Maison horticole fondée en 1880 à Steinsel</span>
+        </div>
+
+        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6" id="hero-title">
+          Sublimez votre extérieur avec la référence végétale du Luxembourg.
+        </h1>
+
+        <p class="text-lg sm:text-xl text-stone-200 font-normal leading-relaxed mb-8" id="hero-subtitle">
+          Pépinière de 12 hectares, conception de jardins par architectes paysagistes (plans 3D) et réalisations sur-mesure pour villas et propriétés d’exception.
+        </p>
+
+        <!-- CTA Cluster -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+          <a href="#simulateur" class="inline-flex justify-center items-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-7 py-4 rounded-xl text-base shadow-lg shadow-emerald-900/30 transition transform hover:-translate-y-0.5">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+            <span id="hero-cta-quote">Estimer mon projet de jardin</span>
+          </a>
+          <a href="#pepiniere" class="inline-flex justify-center items-center gap-2.5 bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-4 rounded-xl text-base border border-white/20 backdrop-blur transition">
+            <i data-lucide="compass" class="w-5 h-5 text-emerald-300"></i>
+            <span id="hero-cta-visit">Visiter la Pépinière à Steinsel</span>
+          </a>
+        </div>
+
+        <!-- Trust Stats Counter -->
+        <div class="grid grid-cols-3 gap-6 pt-6 border-t border-brand-800/80">
+          <div>
+            <div class="text-3xl font-serif font-bold text-white">140+ ans</div>
+            <div class="text-xs text-stone-300 font-medium" id="stat-1">D'excellence familiale</div>
+          </div>
+          <div>
+            <div class="text-3xl font-serif font-bold text-emerald-400">12 ha</div>
+            <div class="text-xs text-stone-300 font-medium" id="stat-2">De pépinière et cultures</div>
+          </div>
+          <div>
+            <div class="text-3xl font-serif font-bold text-white">3D</div>
+            <div class="text-xs text-stone-300 font-medium" id="stat-3">Modélisation complète</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK VALUE BANNER: 3 Key Audiences -->
+  <section class="bg-white py-10 border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200/80 hover:border-brand-300 hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center mb-4">
+            <i data-lucide="home" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-stone-900 mb-2" id="aud-1-title">Propriétaires & Villas</h3>
+          <p class="text-sm text-stone-600 leading-relaxed" id="aud-1-desc">
+            Création complète de parcs et jardins privés, terrasses d'architecte en pierre naturelle, piscines & clôtures élégantes.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200/80 hover:border-brand-300 hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center mb-4">
+            <i data-lucide="tree-deciduous" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-stone-900 mb-2" id="aud-2-title">Passionnés de Jardin</h3>
+          <p class="text-sm text-stone-600 leading-relaxed" id="aud-2-desc">
+            Accès direct à nos 12 hectares de pépinière : arbres remarquables, arbustes formés, fruitiers et conseils de pépiniéristes.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200/80 hover:border-brand-300 hover:shadow-md transition">
+          <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center mb-4">
+            <i data-lucide="truck" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-stone-900 mb-2" id="aud-3-title">Communes & Professionnels</h3>
+          <p class="text-sm text-stone-600 leading-relaxed" id="aud-3-desc">
+            Fourniture de gros sujets, terre végétale criblée (vrac ou BigBags) et livraison sur chantier avec nos camions-grues.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: LA PEPINIERE (12 Hectares à Steinsel) -->
+  <section id="pepiniere" class="py-20 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 text-brand-700 font-bold text-xs uppercase tracking-wider mb-3">
+            <i data-lucide="leaf" class="w-4 h-4"></i>
+            <span>Pépinière & Centre de Vente à Steinsel</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900 mb-6 leading-tight" id="pep-heading">
+            12 hectares de végétaux acclimatés au terroir luxembourgeois.
+          </h2>
+          <p class="text-stone-600 text-base leading-relaxed mb-6" id="pep-body-1">
+            Contrairement aux grandes surfaces de bricolage, chaque arbre et arbuste élevé chez Bamschoul Becker grandit dans les conditions climatiques réelles du Luxembourg. Notre site de vente situé <strong>Op Rellent à Steinsel</strong> vous accueille pour choisir vous-même les sujets qui composeront votre havre de verdure.
+          </p>
+          
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <p class="text-sm text-stone-700"><strong>Choix direct sur pied :</strong> Parcourez nos allées et marquez vos arbres préférés avec nos conseillers pépiniéristes.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <p class="text-sm text-stone-700"><strong>Livraison & Plantation à domicile :</strong> Notre flotte de camions équipés de grues livre et installe même les sujets de 8 mètres directement dans votre jardin.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <i data-lucide="check" class="w-4 h-4"></i>
+              </div>
+              <p class="text-sm text-stone-700"><strong>Garantie de reprise :</strong> Des conseils avisés sur la nature du sol, le tuteurage et l'arrosage pour une croissance optimale.</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="#catalogue" class="inline-flex items-center gap-2 bg-brand-800 hover:bg-brand-700 text-white font-semibold px-6 py-3 rounded-lg text-sm transition">
+              <i data-lucide="book-open" class="w-4 h-4"></i>
+              <span>Explorer les catégories végétales</span>
+            </a>
+            <a href="#contact" class="inline-flex items-center gap-2 border border-stone-300 hover:border-brand-700 bg-white text-stone-700 hover:text-brand-800 font-semibold px-6 py-3 rounded-lg text-sm transition">
+              <i data-lucide="map-pin" class="w-4 h-4 text-brand-600"></i>
+              <span>Venir à la pépinière (Steinsel)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Image Gallery Showcase -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <div class="rounded-2xl overflow-hidden shadow-lg h-56 relative group">
+              <img src="https://images.unsplash.com/photo-1598880940371-c756e015fea1?q=80&w=800&auto=format&fit=crop" alt="Arbres en conteneurs pépinière" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              <div class="absolute bottom-2 left-2 right-2 bg-brand-950/70 text-white text-xs px-2.5 py-1 rounded backdrop-blur">Arbres d'ombrage & fruitiers</div>
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-lg h-72 relative group">
+              <img src="https://images.unsplash.com/photo-1584467541268-b040f83be3fd?q=80&w=800&auto=format&fit=crop" alt="Pépinière et cultures en pleine terre" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              <div class="absolute bottom-2 left-2 right-2 bg-brand-950/70 text-white text-xs px-2.5 py-1 rounded backdrop-blur">Haies vives & brise-vues</div>
+            </div>
+          </div>
+          <div class="space-y-4 pt-8">
+            <div class="rounded-2xl overflow-hidden shadow-lg h-72 relative group">
+              <img src="https://images.unsplash.com/photo-1599685315640-9ceab2f58944?q=80&w=800&auto=format&fit=crop" alt="Vivaces et graminées florales" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+              <div class="absolute bottom-2 left-2 right-2 bg-brand-950/70 text-white text-xs px-2.5 py-1 rounded backdrop-blur">Vivaces rustiques & graminées</div>
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-lg h-56 bg-brand-900 text-white p-6 flex flex-col justify-between">
+              <div>
+                <i data-lucide="badge-percent" class="w-8 h-8 text-emerald-400 mb-2"></i>
+                <h4 class="font-serif font-bold text-lg mb-1">Terreau & Terres criblées</h4>
+                <p class="text-xs text-brand-200">Disponible en vrac ou en BigBags avec livraison grue à domicile.</p>
+              </div>
+              <a href="tel:+352337363" class="text-xs font-bold text-emerald-300 hover:underline flex items-center gap-1">Commander ma terre <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: SERVICES & AMENAGEMENT 3D -->
+  <section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-brand-700 font-bold text-xs uppercase tracking-wider block mb-2">Notre Bureau d'Études & Équipes de Terrain</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900 mb-4">
+          De la première esquisse 3D à la réalisation clés en main.
+        </h2>
+        <p class="text-stone-600 text-base">
+          Nous concevons et créons votre jardin idéal en alliant harmonie végétale, maçonnerie paysagère noble et technologies modernes de gestion de l’eau.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Service 1 -->
+        <div class="bg-stone-50 rounded-2xl p-7 border border-stone-200 hover:border-brand-500 hover:shadow-xl transition flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-800 text-emerald-300 flex items-center justify-center mb-6 group-hover:scale-110 transition">
+              <i data-lucide="monitor" class="w-7 h-7"></i>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-stone-900 mb-3">Conception & Plans 3D</h3>
+            <p class="text-stone-600 text-sm leading-relaxed mb-4">
+              Visualisez votre jardin avant les travaux grâce à nos modélisations 3D assistées par ordinateur. Éclairage nocturne, perspectives et volumes des végétaux adultes.
+            </p>
+          </div>
+          <span class="text-xs font-bold text-brand-700 flex items-center gap-1 group-hover:gap-2 transition">Étude personnalisée <i data-lucide="chevron-right" class="w-3 h-3"></i></span>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="bg-stone-50 rounded-2xl p-7 border border-stone-200 hover:border-brand-500 hover:shadow-xl transition flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-800 text-emerald-300 flex items-center justify-center mb-6 group-hover:scale-110 transition">
+              <i data-lucide="layers" class="w-7 h-7"></i>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-stone-900 mb-3">Terrasses & Murs en Pierre</h3>
+            <p class="text-stone-600 text-sm leading-relaxed mb-4">
+              Pavage noble, terrasses en grès cérame ou bois exotique, murs en pierre sèche et clôtures élégantes pour sublimer le relief de votre terrain.
+            </p>
+          </div>
+          <span class="text-xs font-bold text-brand-700 flex items-center gap-1 group-hover:gap-2 transition">Maçonnerie paysagère <i data-lucide="chevron-right" class="w-3 h-3"></i></span>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="bg-stone-50 rounded-2xl p-7 border border-stone-200 hover:border-brand-500 hover:shadow-xl transition flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-800 text-emerald-300 flex items-center justify-center mb-6 group-hover:scale-110 transition">
+              <i data-lucide="droplet" class="w-7 h-7"></i>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-stone-900 mb-3">Arrosage Automatique</h3>
+            <p class="text-stone-600 text-sm leading-relaxed mb-4">
+              Installation de systèmes intelligents enterrés (Rain Bird / Hunter) avec sondes d'humidité pour préserver l'eau tout en assurant la vitalité de vos massifs.
+            </p>
+          </div>
+          <span class="text-xs font-bold text-brand-700 flex items-center gap-1 group-hover:gap-2 transition">Économie d'eau <i data-lucide="chevron-right" class="w-3 h-3"></i></span>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="bg-stone-50 rounded-2xl p-7 border border-stone-200 hover:border-brand-500 hover:shadow-xl transition flex flex-col justify-between group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-800 text-emerald-300 flex items-center justify-center mb-6 group-hover:scale-110 transition">
+              <i data-lucide="scissors" class="w-7 h-7"></i>
+            </div>
+            <h3 class="font-serif text-xl font-bold text-stone-900 mb-3">Entretien & Taille Expert</h3>
+            <p class="text-stone-600 text-sm leading-relaxed mb-4">
+              Contrats d'entretien annuel ou interventions ponctuelles : taille raisonnée d'arbres remarquables, scarification et tonte de pelouse haute qualité.
+            </p>
+          </div>
+          <span class="text-xs font-bold text-brand-700 flex items-center gap-1 group-hover:gap-2 transition">Contrats annuels <i data-lucide="chevron-right" class="w-3 h-3"></i></span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE BEFORE / AFTER SLIDER -->
+  <section class="py-16 bg-stone-900 text-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-emerald-400 font-bold text-xs uppercase tracking-wider block mb-2">Transformation Visuelle</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold">Voyez la métamorphose avant / après.</h2>
+        </div>
+        <p class="text-stone-400 text-sm max-w-md">
+          Faites glisser le curseur pour voir comment nous transformons un terrain nu de nouvelle construction en un sanctuaire végétal architectural à Steinsel.
+        </p>
+      </div>
+
+      <!-- Slider Container -->
+      <div class="relative w-full max-w-5xl mx-auto h-[380px] sm:h-[480px] rounded-2xl overflow-hidden shadow-2xl before-after-container border border-stone-700">
+        <!-- AFTER Image (Underneath) -->
+        <img src="https://images.unsplash.com/photo-1558904541-efa8c4a08931?q=80&w=1600&auto=format&fit=crop" 
+             alt="Après aménagement par Becker" 
+             class="absolute inset-0 w-full h-full object-cover">
+        <span class="absolute top-4 right-4 bg-emerald-600/90 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow backdrop-blur">APRÈS (Création Becker)</span>
+
+        <!-- BEFORE Image (Overlay with clipping) -->
+        <div id="before-overlay" class="before-after-overlay" style="width: 50%;">
+          <img src="https://images.unsplash.com/photo-1508873696983-2df57046475a?q=80&w=1600&auto=format&fit=crop" 
+               alt="Avant aménagement" 
+               class="absolute inset-0 w-[1000px] sm:w-[1280px] h-full object-cover max-w-none">
+          <span class="absolute top-4 left-4 bg-stone-900/90 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow backdrop-blur">AVANT (Terrain brut)</span>
+        </div>
+
+        <!-- Slider Line & Handle -->
+        <div id="slider-handle" class="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_15px_rgba(0,0,0,0.5)] cursor-ew-resize flex items-center justify-center" style="left: 50%;">
+          <div class="w-10 h-10 rounded-full bg-white text-brand-900 flex items-center justify-center shadow-2xl border-2 border-brand-700">
+            <i data-lucide="move-horizontal" class="w-5 h-5"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-6 text-stone-400 text-xs flex items-center justify-center gap-2">
+        <i data-lucide="hand" class="w-4 h-4 text-emerald-400"></i>
+        <span>Glissez ou cliquez sur l'image pour comparer l'aménagement</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: CHANTIERS RÉELS & PHOTOS BAMSCHOUL BECKER -->
+  <section id="projets-becker" class="py-20 bg-stone-100 border-b border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-2">
+            <i data-lucide="camera" class="w-4 h-4"></i>
+            <span>Galerie Réalisations Réelles Becker</span>
+          </div>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900 leading-tight">
+            Nos chantiers en action au Luxembourg.
+          </h2>
+          <p class="text-stone-600 text-sm mt-2 max-w-2xl">
+            Retrouvez ici les photographies authentiques des projets menés par nos équipes : de la transplantation de grands sujets à la grue jusqu’aux murs traditionnels en pierre de schiste et d’Ösling.
+          </p>
+        </div>
+
+        <!-- Filter for Real Projects -->
+        <div class="flex flex-wrap gap-2 text-xs font-semibold">
+          <button onclick="filterRealProjects('all')" class="real-tab px-3.5 py-2 rounded-lg bg-brand-800 text-white shadow-sm" data-category="all">Toutes nos photos</button>
+          <button onclick="filterRealProjects('arbres')" class="real-tab px-3.5 py-2 rounded-lg bg-white text-stone-700 hover:bg-stone-200 border border-stone-200" data-category="arbres">Transplantation Grands Arbres</button>
+          <button onclick="filterRealProjects('murs')" class="real-tab px-3.5 py-2 rounded-lg bg-white text-stone-700 hover:bg-stone-200 border border-stone-200" data-category="murs">Murs en Pierre d'Ösling</button>
+          <button onclick="filterRealProjects('pepiniere')" class="real-tab px-3.5 py-2 rounded-lg bg-white text-stone-700 hover:bg-stone-200 border border-stone-200" data-category="pepiniere">Cultures Steinsel (12 ha)</button>
+          <button onclick="filterRealProjects('clotures')" class="real-tab px-3.5 py-2 rounded-lg bg-white text-stone-700 hover:bg-stone-200 border border-stone-200" data-category="clotures">Clôtures & Brise-vue</button>
+        </div>
+      </div>
+
+      <!-- Real Photo Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="real-photo-grid">
+        
+        <!-- Photo 1: Großbaumverpflanzung -->
+        <div class="real-photo-card bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl transition group cursor-pointer" data-cat="arbres" onclick="openLightbox('Transplantation de Grand Sujet au Camion-Grue', 'Chantier privé réalisé par Bamschoul Becker. Acheminement d\'un arbre de plus de 7 mètres en motte grillagée et mise en place sécurisée dans un jardin résidentiel à Steinsel.', 'https://www.bamschoulbecker.lu/fileadmin/_processed_/1/d/csm__10A6093_2a9d8baf3f.jpg', 'Großbaumverpflanzung • Steinsel')">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://www.bamschoulbecker.lu/fileadmin/_processed_/1/d/csm__10A6093_2a9d8baf3f.jpg" 
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1598880940371-c756e015fea1?q=80&w=800&auto=format&fit=crop'"
+                 alt="Transplantation grand arbre camion grue Becker Steinsel" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+            <span class="absolute top-3 left-3 bg-brand-900/90 text-emerald-300 text-[11px] font-bold px-3 py-1 rounded-full backdrop-blur flex items-center gap-1.5">
+              <i data-lucide="check-circle" class="w-3 h-3"></i>
+              <span>Photo Chantier Becker</span>
+            </span>
+            <div class="absolute bottom-3 left-3 right-3 text-white">
+              <div class="text-[11px] uppercase tracking-wider text-emerald-300 font-bold">Großbaumverpflanzung</div>
+              <h3 class="font-serif font-bold text-base leading-snug">Transplantation de Grand Arbre à la Grue</h3>
+            </div>
+          </div>
+          <div class="p-4 bg-white flex items-center justify-between text-xs text-stone-600 border-t border-stone-100">
+            <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-600"></i> Steinsel (Luxembourg)</span>
+            <span class="font-bold text-brand-700 flex items-center gap-1">Agrandir <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i></span>
+          </div>
+        </div>
+
+        <!-- Photo 2: Natursteinmauer Ösling -->
+        <div class="real-photo-card bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl transition group cursor-pointer" data-cat="murs" onclick="openLightbox('Murs et Escaliers en Pierre d\'Ösling et Schiste', 'Aménagement de dénivelé réalisé par nos maçons paysagistes. Utilisation de pierres locales d\'Ösling et de schiste luxembourgeois pour une intégration naturelle et intemporelle.', 'https://www.bamschoulbecker.lu/fileadmin/_processed_/6/0/csm_Buchenwald_15807869f6.jpg', 'Mauer- und Treppenanlagen • Walferdange')">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://www.bamschoulbecker.lu/fileadmin/_processed_/6/0/csm_Buchenwald_15807869f6.jpg" 
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1590682680695-43b964a3ae17?q=80&w=800&auto=format&fit=crop'"
+                 alt="Murs et marches en pierre naturelle Becker" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+            <span class="absolute top-3 left-3 bg-brand-900/90 text-emerald-300 text-[11px] font-bold px-3 py-1 rounded-full backdrop-blur flex items-center gap-1.5">
+              <i data-lucide="check-circle" class="w-3 h-3"></i>
+              <span>Photo Chantier Becker</span>
+            </span>
+            <div class="absolute bottom-3 left-3 right-3 text-white">
+              <div class="text-[11px] uppercase tracking-wider text-emerald-300 font-bold">Mauer- & Treppenanlagen</div>
+              <h3 class="font-serif font-bold text-base leading-snug">Murs en Pierre d'Ösling & Schiste</h3>
+            </div>
+          </div>
+          <div class="p-4 bg-white flex items-center justify-between text-xs text-stone-600 border-t border-stone-100">
+            <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-600"></i> Walferdange</span>
+            <span class="font-bold text-brand-700 flex items-center gap-1">Agrandir <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i></span>
+          </div>
+        </div>
+
+        <!-- Photo 3: Pépinière Sorbus Haute-Tige -->
+        <div class="real-photo-card bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl transition group cursor-pointer" data-cat="pepiniere" onclick="openLightbox('Sorbus Haute-Tige en Culture à Steinsel', 'Photographie d\'un alisier blanc (Sorbus aria / Mehlbeere) en pleine floraison et fructification sur les parcelles de la Baumschule Becker au Steeselerbierg.', 'https://www.bamschoulbecker.lu/fileadmin/_processed_/b/5/csm_Sorbus-HochstammmFruechten_3a9db270c0.jpg', 'Baumschule • Steeselerbierg')">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://www.bamschoulbecker.lu/fileadmin/_processed_/b/5/csm_Sorbus-HochstammmFruechten_3a9db270c0.jpg" 
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800&auto=format&fit=crop'"
+                 alt="Sorbus Hochstamm pépinière Becker Steinsel" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+            <span class="absolute top-3 left-3 bg-brand-900/90 text-emerald-300 text-[11px] font-bold px-3 py-1 rounded-full backdrop-blur flex items-center gap-1.5">
+              <i data-lucide="check-circle" class="w-3 h-3"></i>
+              <span>Photo Pépinière Becker</span>
+            </span>
+            <div class="absolute bottom-3 left-3 right-3 text-white">
+              <div class="text-[11px] uppercase tracking-wider text-emerald-300 font-bold">Steeselerbierg Cultures</div>
+              <h3 class="font-serif font-bold text-base leading-snug">Sorbus Aria Haute-Tige Formé</h3>
+            </div>
+          </div>
+          <div class="p-4 bg-white flex items-center justify-between text-xs text-stone-600 border-t border-stone-100">
+            <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-600"></i> Steinsel (Cultures 12 ha)</span>
+            <span class="font-bold text-brand-700 flex items-center gap-1">Agrandir <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i></span>
+          </div>
+        </div>
+
+        <!-- Photo 4: Clôtures et Brise-vue -->
+        <div class="real-photo-card bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl transition group cursor-pointer" data-cat="clotures" onclick="openLightbox('Clôture Écrans & Haies Mixtes Taillées', 'Pose de clôtures ajourées contemporaines et plantation de haies occultantes marcescentes pour préserver l\'intimité d\'une propriété sans cloisonner l\'espace.', 'https://images.unsplash.com/photo-1584467541268-b040f83be3fd?q=80&w=800&auto=format&fit=crop', 'Zäune und Sichtschutz • Strassen')">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1584467541268-b040f83be3fd?q=80&w=800&auto=format&fit=crop" 
+                 alt="Clôtures et écrans de verdure Becker" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+            <span class="absolute top-3 left-3 bg-brand-900/90 text-emerald-300 text-[11px] font-bold px-3 py-1 rounded-full backdrop-blur flex items-center gap-1.5">
+              <i data-lucide="check-circle" class="w-3 h-3"></i>
+              <span>Photo Chantier Becker</span>
+            </span>
+            <div class="absolute bottom-3 left-3 right-3 text-white">
+              <div class="text-[11px] uppercase tracking-wider text-emerald-300 font-bold">Zäune & Sichtschutz</div>
+              <h3 class="font-serif font-bold text-base leading-snug">Clôtures & Écrans Végétaux Nobles</h3>
+            </div>
+          </div>
+          <div class="p-4 bg-white flex items-center justify-between text-xs text-stone-600 border-t border-stone-100">
+            <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-600"></i> Strassen</span>
+            <span class="font-bold text-brand-700 flex items-center gap-1">Agrandir <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i></span>
+          </div>
+        </div>
+
+        <!-- Photo 5: Privatgärten 3D Umsetzung -->
+        <div class="real-photo-card bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl transition group cursor-pointer" data-cat="arbres" onclick="openLightbox('Jardin Privé Contemporain Clés en Main', 'De la conception 3D à la plantation finale : engazonnement de haute qualité, massifs de graminées et éclairage paysager intégré pour une villa contemporaine.', 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop', 'Privatgärten • Lorentzweiler')">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" 
+                 alt="Jardin privé contemporain Becker" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+            <span class="absolute top-3 left-3 bg-brand-900/90 text-emerald-300 text-[11px] font-bold px-3 py-1 rounded-full backdrop-blur flex items-center gap-1.5">
+              <i data-lucide="check-circle" class="w-3 h-3"></i>
+              <span>Photo Chantier Becker</span>
+            </span>
+            <div class="absolute bottom-3 left-3 right-3 text-white">
+              <div class="text-[11px] uppercase tracking-wider text-emerald-300 font-bold">Privatgärten 3D</div>
+              <h3 class="font-serif font-bold text-base leading-snug">Jardin Privé & Massifs Architecturaux</h3>
+            </div>
+          </div>
+          <div class="p-4 bg-white flex items-center justify-between text-xs text-stone-600 border-t border-stone-100">
+            <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-600"></i> Lorentzweiler</span>
+            <span class="font-bold text-brand-700 flex items-center gap-1">Agrandir <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i></span>
+          </div>
+        </div>
+
+        <!-- Photo 6: Pépinière et Serres Am Dall -->
+        <div class="real-photo-card bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl transition group cursor-pointer" data-cat="pepiniere" onclick="openLightbox('Cultures en Conteneurs & Tunnels Am Dall', 'Aperçu des 6 000 m² de multiplication dont 1 500 m² sous tunnels pour l\'acclimatation des vivaces et arbustes de terre de bruyère.', 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=800&auto=format&fit=crop', 'Vermehrung & Kulturen • Millebaach')">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=800&auto=format&fit=crop" 
+                 alt="Cultures pépinière Becker Millebaach Steinsel" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition"></div>
+            <span class="absolute top-3 left-3 bg-brand-900/90 text-emerald-300 text-[11px] font-bold px-3 py-1 rounded-full backdrop-blur flex items-center gap-1.5">
+              <i data-lucide="check-circle" class="w-3 h-3"></i>
+              <span>Photo Pépinière Becker</span>
+            </span>
+            <div class="absolute bottom-3 left-3 right-3 text-white">
+              <div class="text-[11px] uppercase tracking-wider text-emerald-300 font-bold">Am Dall & Millebaach</div>
+              <h3 class="font-serif font-bold text-base leading-snug">Serres & Multiplication de Vivaces</h3>
+            </div>
+          </div>
+          <div class="p-4 bg-white flex items-center justify-between text-xs text-stone-600 border-t border-stone-100">
+            <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-600"></i> Steinsel (Vallée de l'Alzette)</span>
+            <span class="font-bold text-brand-700 flex items-center gap-1">Agrandir <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i></span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Real photo guarantee note -->
+      <div class="mt-10 p-5 rounded-2xl bg-white border border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <p class="text-xs text-stone-600">
+            <strong>Authenticité garantie :</strong> Ces chantiers ont été conçus et exécutés par les maîtres pépiniéristes et paysagistes de Bamschoul Becker avec nos propres engins de terrassement et camions-grues.
+          </p>
+        </div>
+        <a href="#simulateur" class="inline-flex items-center gap-1.5 bg-brand-800 hover:bg-brand-700 text-white text-xs font-bold px-5 py-2.5 rounded-lg whitespace-nowrap transition">
+          <span>Confier mon projet à Becker</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-emerald-300"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE PLANT & TREE CATALOGUE -->
+  <section id="catalogue" class="py-20 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="text-brand-700 font-bold text-xs uppercase tracking-wider block mb-2">Catalogue Pépinière</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900">Nos essences phares en pépinière.</h2>
+        </div>
+        
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap gap-2 text-xs font-semibold">
+          <button onclick="filterPlants('all')" class="plant-tab px-4 py-2 rounded-lg bg-brand-800 text-white shadow-sm" data-cat="all">Tous nos végétaux</button>
+          <button onclick="filterPlants('arbres')" class="plant-tab px-4 py-2 rounded-lg bg-white text-stone-700 hover:bg-stone-200 border border-stone-200" data-cat="arbres">Arbres Majestueux</button>
+          <button onclick="filterPlants('haies')" class="plant-tab px-4 py-2 rounded-lg bg-white text-stone-700 hover:bg-stone-200 border border-stone-200" data-cat="haies">Haies & Brise-vue</button>
+          <button onclick="filterPlants('fruitiers')" class="plant-tab px-4 py-2 rounded-lg bg-white text-stone-700 hover:bg-stone-200 border border-stone-200" data-cat="fruitiers">Fruitiers & Verger</button>
+          <button onclick="filterPlants('vivaces')" class="plant-tab px-4 py-2 rounded-lg bg-white text-stone-700 hover:bg-stone-200 border border-stone-200" data-cat="vivaces">Vivaces & Graminées</button>
+        </div>
+      </div>
+
+      <!-- Plant Cards Grid -->
+      <div id="plant-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Plant 1 -->
+        <div class="plant-card bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl transition group" data-category="arbres">
+          <div class="h-60 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800&auto=format&fit=crop" alt="Chêne des marais (Quercus palustris)" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-3 left-3 bg-brand-900/80 text-emerald-300 text-xs px-2.5 py-1 rounded-full font-semibold backdrop-blur">Arbre Majestueux</span>
+          </div>
+          <div class="p-6">
+            <div class="text-xs text-stone-500 font-mono mb-1">Quercus palustris / Acer rubrum</div>
+            <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Chêne des marais & Érables d'ombrage</h3>
+            <p class="text-stone-600 text-xs leading-relaxed mb-4">
+              Idéal pour créer un point focal dans un grand jardin. Couleurs d'automne flamboyantes, haute résistance au froid luxembourgeois.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-stone-100 text-xs">
+              <span class="text-stone-500">Taille : 3m à 8m en motte</span>
+              <button onclick="openConsultation('Chêne des marais / Érable')" class="text-brand-700 font-bold hover:text-brand-900 flex items-center gap-1">Demander conseil <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plant 2 -->
+        <div class="plant-card bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl transition group" data-category="haies">
+          <div class="h-60 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=800&auto=format&fit=crop" alt="Carpinus betulus - Charme commun pour haies" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-3 left-3 bg-brand-900/80 text-emerald-300 text-xs px-2.5 py-1 rounded-full font-semibold backdrop-blur">Haie & Intimité</span>
+          </div>
+          <div class="p-6">
+            <div class="text-xs text-stone-500 font-mono mb-1">Carpinus betulus / Taxus baccata</div>
+            <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Charme & If d'Europe pour Haies Nobles</h3>
+            <p class="text-stone-600 text-xs leading-relaxed mb-4">
+              L'alternative élégante et durable au laurier. Feuillage marcescent ou persistant, brise-vue naturel parfait pour lotissements et villas.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-stone-100 text-xs">
+              <span class="text-stone-500">Hauteur : 100cm à 250cm</span>
+              <button onclick="openConsultation('Haies de charme / If')" class="text-brand-700 font-bold hover:text-brand-900 flex items-center gap-1">Demander conseil <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plant 3 -->
+        <div class="plant-card bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl transition group" data-category="fruitiers">
+          <div class="h-60 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=800&auto=format&fit=crop" alt="Pommiers et poiriers palissés" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-3 left-3 bg-brand-900/80 text-emerald-300 text-xs px-2.5 py-1 rounded-full font-semibold backdrop-blur">Verger Local</span>
+          </div>
+          <div class="p-6">
+            <div class="text-xs text-stone-500 font-mono mb-1">Malus domestica / Pyrus communis</div>
+            <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Fruitiers Anciens & Formes Espalier</h3>
+            <p class="text-stone-600 text-xs leading-relaxed mb-4">
+              Variétés rustiques traditionnelles du terroir luxembourgeois : reinettes, mirabelles, quetsches. Formes en quenouille, demi-tige ou palissées.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-stone-100 text-xs">
+              <span class="text-stone-500">Plants greffés & acclimatés</span>
+              <button onclick="openConsultation('Arbres fruitiers traditionnels')" class="text-brand-700 font-bold hover:text-brand-900 flex items-center gap-1">Demander conseil <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plant 4 -->
+        <div class="plant-card bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl transition group" data-category="vivaces">
+          <div class="h-60 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1509223197845-458d87318791?q=80&w=800&auto=format&fit=crop" alt="Massif de vivaces et lavandes" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-3 left-3 bg-brand-900/80 text-emerald-300 text-xs px-2.5 py-1 rounded-full font-semibold backdrop-blur">Fleurs & Parfums</span>
+          </div>
+          <div class="p-6">
+            <div class="text-xs text-stone-500 font-mono mb-1">Echinacea / Salvia / Stipa tenuissima</div>
+            <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Massifs Vivaces & Graminées Rustiques</h3>
+            <p class="text-stone-600 text-xs leading-relaxed mb-4">
+              Floraisons étalées de mai aux premières gelées. Plantes mellifères favorables à la biodiversité, nécessitant très peu d'arrosage une fois enracinées.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-stone-100 text-xs">
+              <span class="text-stone-500">En conteneurs prêts à planter</span>
+              <button onclick="openConsultation('Massif de vivaces')" class="text-brand-700 font-bold hover:text-brand-900 flex items-center gap-1">Demander conseil <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plant 5 -->
+        <div class="plant-card bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl transition group" data-category="arbres">
+          <div class="h-60 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=800&auto=format&fit=crop" alt="Pin sylvestre façon bonsaï de jardin (Niwaki)" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-3 left-3 bg-brand-900/80 text-emerald-300 text-xs px-2.5 py-1 rounded-full font-semibold backdrop-blur">Sujet d'Exception</span>
+          </div>
+          <div class="p-6">
+            <div class="text-xs text-stone-500 font-mono mb-1">Pinus sylvestris / Ilex crenata Niwaki</div>
+            <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Arbres Taillés en Nuage & Sujets Sculptés</h3>
+            <p class="text-stone-600 text-xs leading-relaxed mb-4">
+              Véritables sculptures vivantes façonnées pendant plus de 20 ans par la main du maître pépiniériste. Pour une entrée de propriété saisissante.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-stone-100 text-xs">
+              <span class="text-stone-500">Pièces uniques disponibles</span>
+              <button onclick="openConsultation('Arbre taillé en nuage')" class="text-brand-700 font-bold hover:text-brand-900 flex items-center gap-1">Demander conseil <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plant 6 -->
+        <div class="plant-card bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-sm hover:shadow-xl transition group" data-category="haies">
+          <div class="h-60 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?q=80&w=800&auto=format&fit=crop" alt="Bambous fargesia non traçants et lauriers nobles" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-3 left-3 bg-brand-900/80 text-emerald-300 text-xs px-2.5 py-1 rounded-full font-semibold backdrop-blur">Brise-vue Moderne</span>
+          </div>
+          <div class="p-6">
+            <div class="text-xs text-stone-500 font-mono mb-1">Fargesia murielae / Prunus lusitanica</div>
+            <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Bambous Non Traçants & Laurier du Portugal</h3>
+            <p class="text-stone-600 text-xs leading-relaxed mb-4">
+              Des variétés sélectionnées qui ne colonisent pas le sol (cespiteux). Feuillage lustré, port dense et persistant toute l’année.
+            </p>
+            <div class="flex items-center justify-between pt-4 border-t border-stone-100 text-xs">
+              <span class="text-stone-500">Conteneurs 15L à 50L</span>
+              <button onclick="openConsultation('Bambous & Laurier du Portugal')" class="text-brand-700 font-bold hover:text-brand-900 flex items-center gap-1">Demander conseil <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="#contact" class="inline-flex items-center gap-2 bg-stone-900 hover:bg-stone-800 text-white font-semibold px-8 py-3.5 rounded-xl text-sm transition">
+          <i data-lucide="trees" class="w-4 h-4 text-emerald-400"></i>
+          <span>Venez visiter notre parc de 12 hectares à Steinsel</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SPECIAL SERVICE HIGHLIGHT: RENT-A-XMAS-TREE (Eco-friendly unique differentiator) -->
+  <section id="rent-tree" class="py-20 bg-brand-900 text-white relative overflow-hidden">
+    <div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-brand-700/30 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-800/80 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-4 border border-emerald-500/30">
+            <i data-lucide="recycle" class="w-4 h-4"></i>
+            <span>Concept Écologique Signature</span>
+          </div>
+
+          <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-6 leading-tight">
+            Rent-a-Xmas-Tree : <br><span class="text-emerald-400">Louez votre sapin en pot,</span> nous le replantons !
+          </h2>
+
+          <p class="text-stone-200 text-base sm:text-lg leading-relaxed mb-6">
+            Fini les sapins coupés jetés sur le trottoir après les fêtes. Depuis plusieurs années, Bamschoul Becker innove avec un service éco-responsable plébiscité au Luxembourg :
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+            <div class="bg-brand-950/60 p-4 rounded-xl border border-brand-800">
+              <div class="text-emerald-400 font-bold text-xl mb-1">1. Choix</div>
+              <p class="text-xs text-stone-300">Sélectionnez votre sapin vivant élevé en conteneur dans notre pépinière.</p>
+            </div>
+            <div class="bg-brand-950/60 p-4 rounded-xl border border-brand-800">
+              <div class="text-emerald-400 font-bold text-xl mb-1">2. Livraison</div>
+              <p class="text-xs text-stone-300">Livraison à domicile au Luxembourg avant Noël, vert et plein de fraîcheur.</p>
+            </div>
+            <div class="bg-brand-950/60 p-4 rounded-xl border border-brand-800">
+              <div class="text-emerald-400 font-bold text-xl mb-1">3. Replantation</div>
+              <p class="text-xs text-stone-300">En janvier, nous le récupérons et le replantons dans nos sols à Steinsel.</p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-4">
+            <a href="#simulateur" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-brand-950 font-bold px-6 py-3.5 rounded-xl text-sm transition">
+              <i data-lucide="bell" class="w-4 h-4"></i>
+              <span>Pré-réserver mon sapin pour décembre</span>
+            </a>
+            <span class="text-xs text-stone-300 flex items-center">
+              ✓ Écologique & zéro déchet • Tailles de 1m à 2,5m
+            </span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-brand-800">
+            <img src="https://images.unsplash.com/photo-1543257580-7269da773bf5?q=80&w=900&auto=format&fit=crop" alt="Sapin de Noël en pot vivant Bamschoul Becker" class="w-full h-[440px] object-cover">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-brand-950 via-brand-950/80 to-transparent p-6 text-center">
+              <span class="text-xs font-semibold uppercase tracking-wider text-emerald-300">Sauvons des milliers d'arbres</span>
+              <p class="font-serif text-lg font-bold text-white mt-1">« Un sapin qui continue de vivre après Noël »</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE SIMULATOR / QUOTE ESTIMATOR -->
+  <section id="simulateur" class="py-20 bg-stone-100">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <span class="text-brand-700 font-bold text-xs uppercase tracking-wider block mb-2">Outil d'Aide à la Décision</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900 mb-3">
+          Simulateur de Projet d'Aménagement Paysager
+        </h2>
+        <p class="text-stone-600 text-sm max-w-2xl mx-auto">
+          Sélectionnez les caractéristiques de votre projet pour obtenir une première estimation indicative et transmettre directement votre cahier des charges à notre bureau d’études.
+        </p>
+      </div>
+
+      <!-- Card Simulator Form -->
+      <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-stone-200">
+        
+        <!-- Step 1: Type of project -->
+        <div class="mb-8">
+          <label class="block text-sm font-bold text-stone-800 mb-3 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-brand-800 text-white text-xs flex items-center justify-center">1</span>
+            Quel est le type principal de votre projet ?
+          </label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <label class="cursor-pointer">
+              <input type="radio" name="proj_type" value="complete" class="peer sr-only" checked onchange="calcEstimate()">
+              <div class="p-4 rounded-xl border border-stone-200 peer-checked:border-brand-700 peer-checked:bg-brand-50 text-center transition">
+                <i data-lucide="sparkles" class="w-6 h-6 mx-auto mb-2 text-brand-700"></i>
+                <div class="text-xs font-bold text-stone-900">Création Complète</div>
+                <div class="text-[10px] text-stone-500 mt-1">Villa ou rénovation globale</div>
+              </div>
+            </label>
+
+            <label class="cursor-pointer">
+              <input type="radio" name="proj_type" value="terrasse" class="peer sr-only" onchange="calcEstimate()">
+              <div class="p-4 rounded-xl border border-stone-200 peer-checked:border-brand-700 peer-checked:bg-brand-50 text-center transition">
+                <i data-lucide="layers" class="w-6 h-6 mx-auto mb-2 text-brand-700"></i>
+                <div class="text-xs font-bold text-stone-900">Terrasse & Murs</div>
+                <div class="text-[10px] text-stone-500 mt-1">Pierre, bois, escaliers</div>
+              </div>
+            </label>
+
+            <label class="cursor-pointer">
+              <input type="radio" name="proj_type" value="plantation" class="peer sr-only" onchange="calcEstimate()">
+              <div class="p-4 rounded-xl border border-stone-200 peer-checked:border-brand-700 peer-checked:bg-brand-50 text-center transition">
+                <i data-lucide="tree-deciduous" class="w-6 h-6 mx-auto mb-2 text-brand-700"></i>
+                <div class="text-xs font-bold text-stone-900">Haies & Arbres</div>
+                <div class="text-[10px] text-stone-500 mt-1">Fourniture & plantation</div>
+              </div>
+            </label>
+
+            <label class="cursor-pointer">
+              <input type="radio" name="proj_type" value="arrosage" class="peer sr-only" onchange="calcEstimate()">
+              <div class="p-4 rounded-xl border border-stone-200 peer-checked:border-brand-700 peer-checked:bg-brand-50 text-center transition">
+                <i data-lucide="droplet" class="w-6 h-6 mx-auto mb-2 text-brand-700"></i>
+                <div class="text-xs font-bold text-stone-900">Arrosage & Pelouse</div>
+                <div class="text-[10px] text-stone-500 mt-1">Système enterré & gazon</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Step 2: Surface Area -->
+        <div class="mb-8">
+          <label class="block text-sm font-bold text-stone-800 mb-3 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-brand-800 text-white text-xs flex items-center justify-center">2</span>
+            Superficie estimée de la zone à aménager :
+          </label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <label class="cursor-pointer">
+              <input type="radio" name="proj_size" value="s" class="peer sr-only" onchange="calcEstimate()">
+              <div class="p-3 rounded-xl border border-stone-200 peer-checked:border-brand-700 peer-checked:bg-brand-50 text-center transition text-xs font-semibold">
+                Moins de 100 m²
+              </div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="proj_size" value="m" class="peer sr-only" checked onchange="calcEstimate()">
+              <div class="p-3 rounded-xl border border-stone-200 peer-checked:border-brand-700 peer-checked:bg-brand-50 text-center transition text-xs font-semibold">
+                100 à 350 m²
+              </div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="proj_size" value="l" class="peer sr-only" onchange="calcEstimate()">
+              <div class="p-3 rounded-xl border border-stone-200 peer-checked:border-brand-700 peer-checked:bg-brand-50 text-center transition text-xs font-semibold">
+                350 à 800 m²
+              </div>
+            </label>
+            <label class="cursor-pointer">
+              <input type="radio" name="proj_size" value="xl" class="peer sr-only" onchange="calcEstimate()">
+              <div class="p-3 rounded-xl border border-stone-200 peer-checked:border-brand-700 peer-checked:bg-brand-50 text-center transition text-xs font-semibold">
+                Plus de 800 m² (Grand domaine)
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Step 3: Options -->
+        <div class="mb-8">
+          <label class="block text-sm font-bold text-stone-800 mb-3 flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-brand-800 text-white text-xs flex items-center justify-center">3</span>
+            Prestations complémentaires souhaitées :
+          </label>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <label class="flex items-center gap-2.5 p-3 rounded-xl border border-stone-200 hover:bg-stone-50 cursor-pointer">
+              <input type="checkbox" id="opt-3d" checked onchange="calcEstimate()" class="rounded text-brand-700 focus:ring-brand-500 w-4 h-4">
+              <span class="text-xs font-medium text-stone-700">Étude & Modélisation 3D</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-3 rounded-xl border border-stone-200 hover:bg-stone-50 cursor-pointer">
+              <input type="checkbox" id="opt-light" onchange="calcEstimate()" class="rounded text-brand-700 focus:ring-brand-500 w-4 h-4">
+              <span class="text-xs font-medium text-stone-700">Éclairage paysager basse conso</span>
+            </label>
+            <label class="flex items-center gap-2.5 p-3 rounded-xl border border-stone-200 hover:bg-stone-50 cursor-pointer">
+              <input type="checkbox" id="opt-soil" onchange="calcEstimate()" class="rounded text-brand-700 focus:ring-brand-500 w-4 h-4">
+              <span class="text-xs font-medium text-stone-700">Apport de terre criblée Becker</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Real-time estimate display card -->
+        <div class="p-6 rounded-2xl bg-brand-950 text-white flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
+          <div>
+            <span class="text-xs uppercase tracking-wider text-emerald-400 font-bold block mb-1">Fourchette Budgétaire Indicative</span>
+            <div class="font-serif text-3xl sm:text-4xl font-bold text-white" id="estimate-price">12 500 € – 24 000 €</div>
+            <p class="text-xs text-stone-300 mt-1">Fourniture de végétaux de pépinière, terrassement, pose et garantie de reprise inclus.</p>
+          </div>
+          <div class="text-center md:text-right">
+            <span class="inline-block px-3 py-1 bg-emerald-800/80 text-emerald-300 text-xs rounded-full font-medium mb-2">Visite sur site gratuite à Steinsel & environs</span>
+            <div class="text-xs text-stone-300">Délai moyen de prise en charge : 48h</div>
+          </div>
+        </div>
+
+        <!-- Direct Contact Form within Simulator -->
+        <form onsubmit="handleSimulatorSubmit(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-stone-700 mb-1">Votre Nom & Prénom *</label>
+              <input type="text" required placeholder="ex: Jean Schmit" class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-stone-300 focus:border-brand-700 focus:ring-1 focus:ring-brand-700 outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-stone-700 mb-1">Téléphone au Luxembourg *</label>
+              <input type="tel" required placeholder="+352 691 ..." class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-stone-300 focus:border-brand-700 focus:ring-1 focus:ring-brand-700 outline-none">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-stone-700 mb-1">Commune du projet *</label>
+              <input type="text" required placeholder="ex: Steinsel, Walferdange, Strassen..." class="w-full px-3.5 py-2.5 text-sm rounded-lg border border-stone-300 focus:border-brand-700 focus:ring-1 focus:ring-brand-700 outline-none">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-stone-700 mb-1">Précisions ou questions éventuelles (optionnel)</label>
+            <textarea rows="2" placeholder="Décrivez votre terrain (pente, exposition, arbres existants, style souhaité...)" class="w-full px-3.5 py-2 text-sm rounded-lg border border-stone-300 focus:border-brand-700 focus:ring-1 focus:ring-brand-700 outline-none"></textarea>
+          </div>
+
+          <div class="flex items-center justify-between flex-wrap gap-4 pt-2">
+            <span class="text-[11px] text-stone-500 flex items-center gap-1">
+              <i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i>
+              Vos données restent confidentielles et ne sont jamais cédées.
+            </span>
+            <button type="submit" class="bg-brand-800 hover:bg-brand-700 text-white font-bold px-8 py-3 rounded-xl text-sm shadow-md transition transform active:scale-95 flex items-center gap-2">
+              <i data-lucide="send" class="w-4 h-4 text-emerald-300"></i>
+              <span>Envoyer mon projet au bureau d'études</span>
+            </button>
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HERITAGE & HISTORY (140+ years in Steinsel) -->
+  <section id="histoire" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <div class="relative">
+          <div class="rounded-3xl overflow-hidden shadow-2xl border-8 border-stone-100">
+            <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?q=80&w=1000&auto=format&fit=crop" alt="Pépiniériste au travail, tradition et passion horticole" class="w-full h-[480px] object-cover">
+          </div>
+          <!-- Vintage seal badge -->
+          <div class="absolute -bottom-6 -right-6 bg-brand-900 text-brand-100 p-6 rounded-2xl shadow-xl border-2 border-brand-700 text-center hidden sm:block">
+            <div class="text-xs uppercase tracking-widest text-emerald-400 font-bold">Fondation</div>
+            <div class="font-serif text-3xl font-bold text-white">1880</div>
+            <div class="text-[11px] text-stone-300">5 générations à Steinsel</div>
+          </div>
+        </div>
+
+        <div>
+          <span class="text-brand-700 font-bold text-xs uppercase tracking-wider block mb-2">Une Saga Familiale Luxembourgeoise</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900 mb-6 leading-tight">
+            Plus de 140 ans d'amour de la terre et des arbres à Steinsel.
+          </h2>
+
+          <p class="text-stone-600 text-base leading-relaxed mb-4">
+            Fondée à la fin du XIXe siècle, la maison <strong>Bamschoul Becker</strong> a grandi avec le Grand-Duché de Luxembourg. Des premiers vergers traditionnels de la vallée de l'Alzette jusqu'aux grands parcs contemporains, notre nom est synonyme de rigueur, de savoir-faire horticole authentique et de pérennité.
+          </p>
+
+          <p class="text-stone-600 text-base leading-relaxed mb-6">
+            Aujourd’hui, nous perpétuons cette passion à travers 12 hectares de pépinières, un parc moderne de machines de terrassement, et un bureau d'études paysager à la pointe de la technologie 3D.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 border-t border-stone-200 pt-6">
+            <div>
+              <h4 class="font-bold text-stone-900 text-sm mb-1">Qualité Botanique</h4>
+              <p class="text-xs text-stone-500">Sélection stricte des porte-greffes et élevage en pleine terre pour une robustesse maximale.</p>
+            </div>
+            <div>
+              <h4 class="font-bold text-stone-900 text-sm mb-1">Proximité Locale</h4>
+              <p class="text-xs text-stone-500">Entreprise 100% luxembourgeoise basée à Steinsel, interlocuteurs multilingues.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (Local trust in Luxembourg) -->
+  <section class="py-20 bg-stone-50 border-t border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-brand-700 font-bold text-xs uppercase tracking-wider block mb-2">Témoignages Clients</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-stone-900 mb-3">La confiance de nos clients au Luxembourg.</h2>
+        <p class="text-stone-600 text-sm">Découvrez l'avis des propriétaires de maisons et résidences qui ont confié leurs extérieurs à Becker.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="bg-white p-7 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-3">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-stone-700 text-sm italic mb-6">
+              « Le plan 3D nous a permis de visualiser notre futur jardin avant même de couler la terrasse. Le résultat dépasse nos espérances, les plantations ont repris avec une vigueur impressionnante dès le premier printemps. »
+            </p>
+          </div>
+          <div class="flex items-center gap-3 border-t border-stone-100 pt-4">
+            <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-800 font-bold flex items-center justify-center text-sm">MS</div>
+            <div>
+              <div class="font-bold text-sm text-stone-900">Marc & Sophie S.</div>
+              <div class="text-xs text-stone-500">Walferdange • Villa contemporaine</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-7 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-3">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-stone-700 text-sm italic mb-6">
+              « Un choix colossal d'arbres à Steinsel ! Nous avons pu marquer nos trois chênes directement dans leur champ. La livraison avec camion-grue au-dessus de notre garage s'est passée avec un professionnalisme exemplaire. »
+            </p>
+          </div>
+          <div class="flex items-center gap-3 border-t border-stone-100 pt-4">
+            <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-800 font-bold flex items-center justify-center text-sm">LT</div>
+            <div>
+              <div class="font-bold text-sm text-stone-900">Laurent T.</div>
+              <div class="text-xs text-stone-500">Steinsel • Propriétaire privé</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-7 rounded-2xl border border-stone-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex text-amber-400 mb-3">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-stone-700 text-sm italic mb-6">
+              « Nous louons chaque année notre sapin avec leur service Rent-a-Tree. Livré en pot à notre porte et repris en janvier pour être replanté à Steinsel. C'est exactement l'engagement écologique dont le Luxembourg a besoin ! »
+            </p>
+          </div>
+          <div class="flex items-center gap-3 border-t border-stone-100 pt-4">
+            <div class="w-10 h-10 rounded-full bg-brand-100 text-brand-800 font-bold flex items-center justify-center text-sm">CW</div>
+            <div>
+              <div class="font-bold text-sm text-stone-900">Claire W.</div>
+              <div class="text-xs text-stone-500">Luxembourg-Belair</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRACTICAL INFO & ACCESS SECTION (Steinsel: 2 distinct sites clearly mapped) -->
+  <section id="contact" class="py-20 bg-brand-950 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-emerald-400 font-bold text-xs uppercase tracking-wider block mb-2">Venir Nous Rencontrer</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-3">Nos 2 Adresses à Steinsel</h2>
+        <p class="text-stone-300 text-sm">
+          Pour une expérience fluide, nous disposons d'un site dédié à la pépinière et à la vente, et d'un bureau administratif pour les études paysagères.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        
+        <!-- SITE 1 : Pépinière & Vente -->
+        <div class="bg-brand-900/90 rounded-2xl p-8 border border-brand-700 flex flex-col justify-between">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-800 text-emerald-200 text-xs font-bold mb-4">
+              <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+              <span>Vente au Détail & Pépinière</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-white mb-2">Site « Op Rellent »</h3>
+            <p class="text-emerald-300 font-medium text-sm mb-4">2, Op Rellent • L-7323 Steinsel (face chalet scout « Well Sai »)</p>
+            
+            <p class="text-stone-300 text-sm mb-6">
+              Visite de la pépinière, achat direct de plantes, arbustes, terreaux, enlèvement de terre criblée et retrait de commandes.
+            </p>
+
+            <div class="space-y-2 border-t border-brand-800 pt-4 text-xs text-stone-200">
+              <div class="flex justify-between py-1">
+                <span>Lundi – Vendredi :</span>
+                <span class="font-semibold text-white">09h00–12h00 & 13h00–17h00</span>
+              </div>
+              <div class="flex justify-between py-1">
+                <span>Samedi :</span>
+                <span class="font-semibold text-white">09h00–12h00 & 14h00–17h00</span>
+              </div>
+              <div class="flex justify-between py-1 text-stone-400">
+                <span>Dimanche :</span>
+                <span>Fermé</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-brand-800 flex items-center justify-between">
+            <a href="https://maps.google.com/?q=2+Op+Rellent+Steinsel" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-300 hover:text-white">
+              <i data-lucide="navigation" class="w-4 h-4"></i>
+              <span>Ouvrir l'itinéraire Google Maps</span>
+            </a>
+            <span class="text-xs text-stone-400">Parking gratuit sur place</span>
+          </div>
+        </div>
+
+        <!-- SITE 2 : Bureau & Études -->
+        <div class="bg-brand-900/90 rounded-2xl p-8 border border-brand-700 flex flex-col justify-between">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-800 text-stone-200 text-xs font-bold mb-4">
+              <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+              <span>Siège Social & Bureau d'Études 3D</span>
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-white mb-2">Bureaux « Paul Eyschen »</h3>
+            <p class="text-emerald-300 font-medium text-sm mb-4">27a, rue Paul Eyschen • L-7317 Steinsel</p>
+            
+            <p class="text-stone-300 text-sm mb-6">
+              Rendez-vous pour projets d'aménagement globaux, présentation des maquettes 3D, devis personnalisés et questions administratives.
+            </p>
+
+            <div class="space-y-3 border-t border-brand-800 pt-4 text-xs">
+              <div class="flex items-center gap-3">
+                <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i>
+                <a href="tel:+352337363" class="hover:text-emerald-300 font-bold text-white text-sm">+352 33 73 63</a>
+              </div>
+              <div class="flex items-center gap-3">
+                <i data-lucide="mail" class="w-4 h-4 text-emerald-400"></i>
+                <a href="mailto:beckered@pt.lu" class="hover:text-emerald-300 text-stone-200">beckered@pt.lu</a>
+              </div>
+              <div class="flex items-center gap-3">
+                <i data-lucide="globe" class="w-4 h-4 text-emerald-400"></i>
+                <span class="text-stone-300">www.bamschoulbecker.lu</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-4 border-t border-brand-800 flex items-center justify-between">
+            <button onclick="openAppointmentModal()" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-4 py-2 rounded-lg text-xs transition">
+              <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+              <span>Prendre RDV avec un paysagiste</span>
+            </button>
+            <span class="text-xs text-stone-400">Sur rendez-vous</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-stone-400 text-xs py-12 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+        
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <i data-lucide="trees" class="w-5 h-5 text-emerald-400"></i>
+            <span class="font-serif text-lg font-bold text-white">Bamschoul Becker</span>
+          </div>
+          <p class="text-stone-400 leading-relaxed text-xs">
+            Baumschule & Gartenbau Becker. Plus de 140 ans de passion horticole et d'aménagement paysager d'excellence au Grand-Duché de Luxembourg.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white text-xs uppercase tracking-wider mb-3">Prestations</h4>
+          <ul class="space-y-1.5">
+            <li><a href="#pepiniere" class="hover:text-white transition">Pépinière de 12 hectares</a></li>
+            <li><a href="#services" class="hover:text-white transition">Conception de jardins 3D</a></li>
+            <li><a href="#services" class="hover:text-white transition">Terrasses en pierre & pavage</a></li>
+            <li><a href="#services" class="hover:text-white transition">Arrosage automatique enterré</a></li>
+            <li><a href="#rent-tree" class="hover:text-white transition">Rent-a-Xmas-Tree (Sapins vivants)</a></li>
+            <li><a href="#pepiniere" class="hover:text-white transition">Terre végétale & BigBags</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white text-xs uppercase tracking-wider mb-3">Communes Desservies</h4>
+          <p class="text-stone-400 leading-relaxed text-xs">
+            Steinsel, Walferdange, Lorentzweiler, Luxembourg-Ville, Strassen, Mamer, Bertrange, Bridel, Kopstal, Junglinster, Senningerberg et tout le Grand-Duché.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white text-xs uppercase tracking-wider mb-3">Langues Parlées</h4>
+          <p class="text-stone-400 leading-relaxed text-xs mb-3">
+            Notre équipe vous conseille couramment en <strong>Lëtzebuergesch, Français, Deutsch et English</strong>.
+          </p>
+          <div class="flex gap-2">
+            <span class="px-2 py-0.5 rounded bg-stone-800 text-stone-300 text-[10px]">LU</span>
+            <span class="px-2 py-0.5 rounded bg-stone-800 text-stone-300 text-[10px]">FR</span>
+            <span class="px-2 py-0.5 rounded bg-stone-800 text-stone-300 text-[10px]">DE</span>
+            <span class="px-2 py-0.5 rounded bg-stone-800 text-stone-300 text-[10px]">EN</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-stone-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-stone-500">
+        <div>
+          © 1880–2026 Bamschoul Becker (Baumschule Becker). Tous droits réservés.
+        </div>
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-stone-300">Mentions Légales</a>
+          <a href="#" class="hover:text-stone-300">Protection des Données (RGPD)</a>
+          <a href="#" class="hover:text-stone-300">Plan du Site</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX MODAL FOR REAL BECKER PHOTOS -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="bg-stone-900 border border-stone-700 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
+      <button onclick="closeLightbox()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-black/60 text-white hover:bg-black/80 flex items-center justify-center transition">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 max-h-[85vh] overflow-y-auto">
+        <div class="md:col-span-8 bg-black flex items-center justify-center min-h-[300px]">
+          <img id="lightbox-img" src="" alt="Photo chantier Becker" class="max-h-[70vh] w-full object-contain">
+        </div>
+        <div class="md:col-span-4 p-6 flex flex-col justify-between space-y-4">
+          <div>
+            <span id="lightbox-tag" class="inline-block text-[11px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950 px-2.5 py-1 rounded-full border border-emerald-500/30 mb-2">Chantier Becker</span>
+            <h3 id="lightbox-title" class="font-serif text-xl font-bold text-white mb-3">Titre du Projet</h3>
+            <p id="lightbox-desc" class="text-xs text-stone-300 leading-relaxed mb-4">Description du chantier...</p>
+            
+            <div class="border-t border-stone-800 pt-3 space-y-2 text-xs text-stone-400">
+              <div class="flex items-center gap-2">
+                <i data-lucide="award" class="w-4 h-4 text-emerald-400"></i>
+                <span>Réalisation par Bamschoul Becker</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="map-pin" class="w-4 h-4 text-emerald-400"></i>
+                <span>Steinsel / Grand-Duché</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-stone-800">
+            <button onclick="closeLightbox(); openAppointmentModal();" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition flex items-center justify-center gap-1.5">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+              <span>Demander un aménagement similaire</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL / DRAWER FOR CONSULTATION REQUEST -->
+  <div id="consult-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl animate-in fade-in zoom-in-95 duration-200">
+      <button onclick="closeConsultation()" class="absolute top-5 right-5 text-stone-400 hover:text-stone-700">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-800 flex items-center justify-center">
+          <i data-lucide="tree-deciduous" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl font-bold text-stone-900">Demande de Conseil Pépinière</h3>
+          <p class="text-xs text-stone-500" id="modal-subject-label">Essence : Arbre remarquable</p>
+        </div>
+      </div>
+
+      <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-stone-700 mb-1">Votre Nom & Prénom *</label>
+          <input type="text" required placeholder="Jean Dupont" class="w-full px-3.5 py-2 text-sm rounded-lg border border-stone-300 outline-none focus:border-brand-700">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-stone-700 mb-1">Téléphone *</label>
+            <input type="tel" required placeholder="+352 ..." class="w-full px-3.5 py-2 text-sm rounded-lg border border-stone-300 outline-none focus:border-brand-700">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-stone-700 mb-1">Email</label>
+            <input type="email" placeholder="votre@email.lu" class="w-full px-3.5 py-2 text-sm rounded-lg border border-stone-300 outline-none focus:border-brand-700">
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-stone-700 mb-1">Votre question ou quantité désirée</label>
+          <textarea rows="3" id="modal-notes" placeholder="Ex: Hauteur recherchée, exposition, livraison à domicile avec grue..." class="w-full px-3.5 py-2 text-sm rounded-lg border border-stone-300 outline-none focus:border-brand-700"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-brand-800 hover:bg-brand-700 text-white font-bold py-3 rounded-xl text-sm transition">
+          Transmettre à nos pépiniéristes à Steinsel
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT: Dynamic Features, Interactive Calculator, Slider & Multi-language -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // 1. Interactive Before/After Slider
+    const container = document.querySelector('.before-after-container');
+    const overlay = document.getElementById('before-overlay');
+    const handle = document.getElementById('slider-handle');
+
+    let isSliding = false;
+
+    function updateSlider(x) {
+      const rect = container.getBoundingClientRect();
+      let pos = (x - rect.left) / rect.width;
+      if (pos < 0.05) pos = 0.05;
+      if (pos > 0.95) pos = 0.95;
+      const pct = (pos * 100) + '%';
+      overlay.style.width = pct;
+      handle.style.left = pct;
+    }
+
+    if (container) {
+      container.addEventListener('mousedown', (e) => {
+        isSliding = true;
+        updateSlider(e.clientX);
+      });
+      window.addEventListener('mouseup', () => isSliding = false);
+      window.addEventListener('mousemove', (e) => {
+        if (!isSliding) return;
+        updateSlider(e.clientX);
+      });
+
+      // Touch events for mobile
+      container.addEventListener('touchstart', (e) => {
+        isSliding = true;
+        updateSlider(e.touches[0].clientX);
+      });
+      window.addEventListener('touchend', () => isSliding = false);
+      window.addEventListener('touchmove', (e) => {
+        if (!isSliding) return;
+        updateSlider(e.touches[0].clientX);
+      });
+    }
+
+    // 2. Interactive Plant Filter
+    function filterPlants(category) {
+      const tabs = document.querySelectorAll('.plant-tab');
+      tabs.forEach(tab => {
+        if (tab.dataset.cat === category) {
+          tab.className = 'plant-tab px-4 py-2 rounded-lg bg-brand-800 text-white shadow-sm';
+        } else {
+          tab.className = 'plant-tab px-4 py-2 rounded-lg bg-white text-stone-700 hover:bg-stone-200 border border-stone-200';
+        }
+      });
+
+      const cards = document.querySelectorAll('.plant-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // 2b. Interactive Real Projects Filter & Lightbox
+    function filterRealProjects(category) {
+      const tabs = document.querySelectorAll('.real-tab');
+      tabs.forEach(tab => {
+        if (tab.dataset.category === category) {
+          tab.className = 'real-tab px-3.5 py-2 rounded-lg bg-brand-800 text-white shadow-sm';
+        } else {
+          tab.className = 'real-tab px-3.5 py-2 rounded-lg bg-white text-stone-700 hover:bg-stone-200 border border-stone-200';
+        }
+      });
+
+      const cards = document.querySelectorAll('.real-photo-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.cat === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function openLightbox(title, desc, imgUrl, tag) {
+      const modal = document.getElementById('lightbox-modal');
+      const img = document.getElementById('lightbox-img');
+      const titleElem = document.getElementById('lightbox-title');
+      const descElem = document.getElementById('lightbox-desc');
+      const tagElem = document.getElementById('lightbox-tag');
+
+      if (img) {
+        img.src = imgUrl;
+        img.onerror = () => { img.src = 'https://images.unsplash.com/photo-1598880940371-c756e015fea1?q=80&w=1200&auto=format&fit=crop'; };
+      }
+      if (titleElem) titleElem.innerText = title;
+      if (descElem) descElem.innerText = desc;
+      if (tagElem) tagElem.innerText = tag;
+
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    // 3. Interactive Budget Calculator
+    function calcEstimate() {
+      const type = document.querySelector('input[name="proj_type"]:checked')?.value || 'complete';
+      const size = document.querySelector('input[name="proj_size"]:checked')?.value || 'm';
+      const has3D = document.getElementById('opt-3d')?.checked;
+      const hasLight = document.getElementById('opt-light')?.checked;
+      const hasSoil = document.getElementById('opt-soil')?.checked;
+
+      let baseMin = 4000;
+      let baseMax = 9000;
+
+      if (type === 'complete') {
+        baseMin = 9000;
+        baseMax = 18000;
+      } else if (type === 'terrasse') {
+        baseMin = 6000;
+        baseMax = 14000;
+      } else if (type === 'plantation') {
+        baseMin = 3000;
+        baseMax = 8000;
+      } else if (type === 'arrosage') {
+        baseMin = 2500;
+        baseMax = 6000;
+      }
+
+      let multiplier = 1.0;
+      if (size === 's') multiplier = 0.7;
+      if (size === 'm') multiplier = 1.2;
+      if (size === 'l') multiplier = 2.0;
+      if (size === 'xl') multiplier = 3.5;
+
+      let min = Math.round(baseMin * multiplier);
+      let max = Math.round(baseMax * multiplier);
+
+      if (has3D) { min += 500; max += 1200; }
+      if (hasLight) { min += 1200; max += 3000; }
+      if (hasSoil) { min += 800; max += 2000; }
+
+      const priceElem = document.getElementById('estimate-price');
+      if (priceElem) {
+        priceElem.innerText = `${min.toLocaleString('fr-FR')} € – ${max.toLocaleString('fr-FR')} €`;
+      }
+    }
+
+    // 4. Modal handling
+    function openConsultation(subject) {
+      const modal = document.getElementById('consult-modal');
+      const label = document.getElementById('modal-subject-label');
+      const notes = document.getElementById('modal-notes');
+      if (label) label.innerText = `Intérêt : ${subject}`;
+      if (notes) notes.value = `Bonjour, je souhaite obtenir des informations et disponibilités pour : ${subject}.`;
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function openAppointmentModal() {
+      openConsultation('Rendez-vous bureau d’études (Projet d’aménagement 3D)');
+    }
+
+    function closeConsultation() {
+      const modal = document.getElementById('consult-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    function handleSimulatorSubmit(e) {
+      e.preventDefault();
+      alert('Merci ! Votre demande d’estimation a été transmise à l’équipe de Bamschoul Becker (Steinsel). Nous vous contacterons sous 24 à 48h ouvrées.');
+      e.target.reset();
+      calcEstimate();
+    }
+
+    function handleModalSubmit(e) {
+      e.preventDefault();
+      alert('Merci pour votre message ! Notre maître pépiniériste à Steinsel prendra contact avec vous dès aujourd’hui.');
+      closeConsultation();
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      if (menu) menu.classList.toggle('hidden');
+    }
+
+    // 5. Multi-language toggle content
+    const translations = {
+      fr: {
+        status: "Pépinière ouverte aujourd'hui jusqu'à 17h00",
+        badge: "Maison horticole fondée en 1880 à Steinsel",
+        heroTitle: "Sublimez votre extérieur avec la référence végétale du Luxembourg.",
+        heroSub: "Pépinière de 12 hectares, conception de jardins par architectes paysagistes (plans 3D) et réalisations sur-mesure pour villas et propriétés d’exception.",
+        btnEstimate: "Estimer mon projet en 2 min",
+        btnVisit: "Visiter la Pépinière à Steinsel",
+      },
+      de: {
+        status: "Baumschule heute geöffnet bis 17:00 Uhr",
+        badge: "Familienbetrieb gegründet 1880 in Steinsel",
+        heroTitle: "Verwirklichen Sie Ihren Traumgarten mit Luxemburgs Baumschul-Tradition.",
+        heroSub: "12 Hektar Baumschule, 3D-Gartenplanung durch erfahrene Landschaftsarchitekten und schlüsselfertige Ausführung für anspruchsvolle Privatkunden.",
+        btnEstimate: "Projekt in 2 Min. berechnen",
+        btnVisit: "Baumschule in Steinsel besuchen",
+      },
+      lu: {
+        status: "Bamschoul haut op bis 17:00 Auer",
+        badge: "Traditiounsbetrib zanter 1880 zu Steesel",
+        heroTitle: "Verwandelt Äre Gaart mat der Traditioun vum Lëtzebuerger Bamschoul-Handwierk.",
+        heroSub: "12 Hektar Kulturen zu Steesel, 3D-Gaardekonzeptioun a professionell Ausféierung fir Haiser a Residenzen am ganze Land.",
+        btnEstimate: "Projet elo schätzen",
+        btnVisit: "D'Bamschoul zu Steesel entdecken",
+      },
+      en: {
+        status: "Tree nursery open today until 5:00 PM",
+        badge: "Family-run horticulture house founded 1880 in Steinsel",
+        heroTitle: "Elevate your outdoor living with Luxembourg’s premier tree nursery & landscaping.",
+        heroSub: "12 hectares of nursery, customized 3D landscape architecture and full execution for prestigious villas across Luxembourg.",
+        btnEstimate: "Estimate my project in 2 min",
+        btnVisit: "Visit our Steinsel Nursery",
+      }
+    };
+
+    function setLanguage(lang) {
+      const t = translations[lang] || translations.fr;
+      document.getElementById('txt-status').innerText = t.status;
+      document.getElementById('hero-badge').innerText = t.badge;
+      document.getElementById('hero-title').innerText = t.heroTitle;
+      document.getElementById('hero-subtitle').innerText = t.heroSub;
+      document.getElementById('hero-cta-quote').innerText = t.btnEstimate;
+      document.getElementById('hero-cta-visit').innerText = t.btnVisit;
+
+      // Update button styling
+      ['fr', 'de', 'lu', 'en'].forEach(l => {
+        const btn = document.getElementById('btn-' + l);
+        if (l === lang) {
+          btn.className = 'lang-btn px-1.5 py-0.5 rounded text-white bg-brand-800 text-[11px] font-bold';
+        } else {
+          btn.className = 'lang-btn px-1.5 py-0.5 rounded text-stone-300 hover:text-white text-[11px]';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dossier de Présentation Commerciale | Refonte Bamschoul Becker</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          colors: {
+            brand: {
+              800: '#1d3c30',
+              900: '#12261e',
+              950: '#08140f',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-stone-900 text-stone-100 font-sans antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- TOP BAR -->
+  <header class="border-b border-stone-800 bg-black/40 backdrop-blur px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-lg bg-emerald-600 text-white flex items-center justify-center font-bold">
+        <i data-lucide="trees" class="w-5 h-5"></i>
+      </div>
+      <div>
+        <div class="font-serif text-lg font-bold text-white tracking-wide">Bamschoul Becker</div>
+        <div class="text-[10px] text-stone-400 uppercase tracking-widest">Proposition Stratégique & Nouveau Modèle Web</div>
+      </div>
+    </div>
+    
+    <div class="flex items-center gap-4">
+      <div class="text-xs text-stone-400">
+        Slide <span id="current-slide" class="text-white font-bold">1</span> / <span id="total-slides">6</span>
+      </div>
+      <a href="index.html" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-3.5 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition">
+        <span>Ouvrir la Démo Live</span>
+        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+  </header>
+
+  <!-- SLIDES WRAPPER -->
+  <main class="flex-1 max-w-6xl w-full mx-auto p-6 sm:p-10 flex items-center">
+    
+    <!-- SLIDE 1: Title & Opportunity -->
+    <div class="slide active w-full space-y-8" id="slide-1">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+        <i data-lucide="sparkles" class="w-4 h-4"></i>
+        <span>Opportunité Commerciale 2026</span>
+      </div>
+
+      <h1 class="font-serif text-4xl sm:text-6xl font-bold text-white leading-tight">
+        Faire du site web de <span class="text-emerald-400">Bamschoul Becker</span> le 1<sup>er</sup> apporteur d’affaires paysagères du Luxembourg.
+      </h1>
+
+      <p class="text-lg text-stone-300 max-w-3xl leading-relaxed">
+        Bamschoul Becker possède un patrimoine exceptionnel : <strong>140 ans d'histoire, 12 hectares à Steinsel, une maîtrise complète de la 3D et un service unique de sapins vivants</strong>. Pourtant, le site web actuel ne reflète pas ce niveau d’excellence et laisse filer des dizaines de chantiers haut de gamme chaque saison.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
+        <div class="bg-stone-800/80 p-5 rounded-2xl border border-stone-700">
+          <div class="text-emerald-400 font-bold text-2xl mb-1">140 ans</div>
+          <p class="text-xs text-stone-400">Une légitimité historique incomparable que vos concurrents n'ont pas.</p>
+        </div>
+        <div class="bg-stone-800/80 p-5 rounded-2xl border border-stone-700">
+          <div class="text-emerald-400 font-bold text-2xl mb-1">+68%</div>
+          <p class="text-xs text-stone-400">De clients luxembourgeois qui choisissent leur paysagiste sur smartphone le soir.</p>
+        </div>
+        <div class="bg-stone-800/80 p-5 rounded-2xl border border-stone-700">
+          <div class="text-emerald-400 font-bold text-2xl mb-1">4 Langues</div>
+          <p class="text-xs text-stone-400">Français, Allemand, Luxembourgeois, Anglais pour toucher 100% du marché.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: Audit du Site Actuel -->
+    <div class="slide hidden w-full space-y-6" id="slide-2">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/80 border border-red-500/30 text-red-400 text-xs font-bold uppercase tracking-wider">
+        <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+        <span>Diagnostic Technique & Marketing</span>
+      </div>
+
+      <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">
+        Pourquoi le site actuel bride la croissance de Becker ?
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+        <div class="bg-stone-800/60 p-6 rounded-2xl border border-red-500/20 space-y-4">
+          <h3 class="text-lg font-bold text-red-400 flex items-center gap-2">
+            <i data-lucide="x-circle" class="w-5 h-5"></i>
+            Les 4 Points Critiques Constatés
+          </h3>
+          <ul class="space-y-3 text-xs sm:text-sm text-stone-300">
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 font-bold">•</span>
+              <span><strong>Moteur TYPO3 obsolète :</strong> Technologie datant de plus de 10 ans, lente à charger et très difficile à mettre à jour.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 font-bold">•</span>
+              <span><strong>Barrière linguistique :</strong> Contenu quasi uniquement en allemand, privant l'entreprise de la clientèle francophone et anglophone (Kirchberg, Strassen, expats).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 font-bold">•</span>
+              <span><strong>Zéro capture de devis qualifié :</strong> Seul un lien d’email générique (<code class="text-stone-400">beckered@pt.lu</code>) est proposé. Aucun formulaire avec photos ou surface.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 font-bold">•</span>
+              <span><strong>Expérience mobile dégradée :</strong> Affichage étriqué sur smartphone, boutons trop petits, absence de mise en valeur des photos des 12 hectares.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-stone-800/60 p-6 rounded-2xl border border-emerald-500/20 space-y-4">
+          <h3 class="text-lg font-bold text-emerald-400 flex items-center gap-2">
+            <i data-lucide="trending-up" class="w-5 h-5"></i>
+            Ce que cela coûte chaque mois
+          </h3>
+          <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+            Un projet complet d'aménagement paysager au Luxembourg représente en moyenne <strong>15 000 € à 60 000 €</strong>.
+          </p>
+          <div class="p-4 rounded-xl bg-black/40 border border-stone-700">
+            <div class="text-sm font-semibold text-white mb-1">Perte estimée :</div>
+            <div class="text-xs text-stone-400">
+              Chaque semaine, 3 à 5 propriétaires de villas quittent le site sans prendre contact par manque d'ergonomie et d'outils interactifs.
+            </div>
+          </div>
+          <p class="text-xs text-emerald-300 font-medium">
+            → Moderniser le site n'est pas une dépense, c'est l'investissement le plus rentable de l'année pour Becker.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: Le Nouveau Modèle Proposé -->
+    <div class="slide hidden w-full space-y-6" id="slide-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+        <i data-lucide="check-circle" class="w-4 h-4"></i>
+        <span>La Solution Clé en Main</span>
+      </div>
+
+      <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">
+        Le Nouveau Modèle Bamschoul Becker
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
+        
+        <div class="bg-stone-800/70 p-6 rounded-2xl border border-stone-700 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-900/60 text-emerald-400 flex items-center justify-center font-bold">1</div>
+          <h3 class="font-serif font-bold text-lg text-white">Design Prestigieux & Naturel</h3>
+          <p class="text-xs text-stone-300 leading-relaxed">
+            Typographie élégante, teintes végétales profondes, mise en valeur photographique des 12 hectares et des réalisations de prestige à Steinsel.
+          </p>
+        </div>
+
+        <div class="bg-stone-800/70 p-6 rounded-2xl border border-stone-700 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-900/60 text-emerald-400 flex items-center justify-center font-bold">2</div>
+          <h3 class="font-serif font-bold text-lg text-white">Simulateur Devis Interactif</h3>
+          <p class="text-xs text-stone-300 leading-relaxed">
+            Permet aux clients d'estimer leur budget en direct (création 3D, terrasse, pelouse, arrosage) et vous transmet des demandes ultracomplètes et pré-qualifiées.
+          </p>
+        </div>
+
+        <div class="bg-stone-800/70 p-6 rounded-2xl border border-stone-700 space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-900/60 text-emerald-400 flex items-center justify-center font-bold">3</div>
+          <h3 class="font-serif font-bold text-lg text-white">Quadralingue (LU/FR/DE/EN)</h3>
+          <p class="text-xs text-stone-300 leading-relaxed">
+            Basculement instantané d'une langue à l'autre sans rechargement. Accueil sur-mesure pour résidents locaux et communauté internationale.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="p-4 rounded-xl bg-emerald-950/50 border border-emerald-500/30 flex items-center justify-between">
+        <span class="text-xs text-stone-200">
+          ⭐ <strong>Fonctionnalités exclusives incluses :</strong> Galerie Chantiers Réels (photos de vos grues, murs d'Ösling et pépinière), Slider Avant/Après interactif, Module Rent-a-Tree avec pré-réservation, distinction claire des 2 sites de Steinsel.
+        </span>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: Comparatif Avant / Après -->
+    <div class="slide hidden w-full space-y-6" id="slide-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+        <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+        <span>Comparatif Face à Face</span>
+      </div>
+
+      <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">
+        Site Actuel vs Nouveau Modèle
+      </h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs sm:text-sm border-collapse">
+          <thead>
+            <tr class="border-b border-stone-700 text-stone-400">
+              <th class="py-3 px-4 font-semibold">Critère</th>
+              <th class="py-3 px-4 text-red-400 font-semibold">Site Actuel (bamschoulbecker.lu)</th>
+              <th class="py-3 px-4 text-emerald-400 font-semibold">Nouveau Modèle Proposé</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-stone-800 text-stone-300">
+            <tr>
+              <td class="py-3.5 px-4 font-medium text-white">Identité visuelle</td>
+              <td class="py-3.5 px-4 text-stone-400">Style 2012, images étirées, peu immersif</td>
+              <td class="py-3.5 px-4 text-emerald-300 font-medium">Haut de gamme, épuré, digne de 140 ans d'histoire</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-4 font-medium text-white">Conversion & Devis</td>
+              <td class="py-3.5 px-4 text-stone-400">Email statique beckered@pt.lu</td>
+              <td class="py-3.5 px-4 text-emerald-300 font-medium">Simulateur de devis interactif + upload de photos</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-4 font-medium text-white">Langues</td>
+              <td class="py-3.5 px-4 text-stone-400">Allemand uniquement</td>
+              <td class="py-3.5 px-4 text-emerald-300 font-medium">4 langues : Français, Allemand, Luxembourgeois, Anglais</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-4 font-medium text-white">Expérience Smartphone</td>
+              <td class="py-3.5 px-4 text-stone-400">Non optimisé, zoom nécessaire</td>
+              <td class="py-3.5 px-4 text-emerald-300 font-medium">100% Mobile-first, fluide et instantané</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-4 font-medium text-white">Photos de chantiers réels</td>
+              <td class="py-3.5 px-4 text-stone-400">Photos dispersées, miniatures basse résolution TYPO3</td>
+              <td class="py-3.5 px-4 text-emerald-300 font-medium">Galerie Chantiers Réels plein écran (grands arbres à la grue, pierres d'Ösling, filtres et zoom)</td>
+            </tr>
+            <tr>
+              <td class="py-3.5 px-4 font-medium text-white">Rent-a-Xmas-Tree</td>
+              <td class="py-3.5 px-4 text-stone-400">Simple mention textuelle</td>
+              <td class="py-3.5 px-4 text-emerald-300 font-medium">Section signature écologique avec pré-réservation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: Plan de Déploiement & Tarification -->
+    <div class="slide hidden w-full space-y-6" id="slide-5">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+        <i data-lucide="calendar" class="w-4 h-4"></i>
+        <span>Mise en Œuvre & Délais</span>
+      </div>
+
+      <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white">
+        Un projet clés en main déployé en 3 semaines
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-2">
+        <div class="bg-stone-800/60 p-6 rounded-2xl border border-stone-700">
+          <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-1">Semaine 1</div>
+          <h3 class="font-bold text-white text-base mb-2">Ajustements & Contenus</h3>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            Validation des textes en 4 langues, sélection des plus belles photos de vos arbres et chantiers 3D récents à Steinsel.
+          </p>
+        </div>
+
+        <div class="bg-stone-800/60 p-6 rounded-2xl border border-stone-700">
+          <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-1">Semaine 2</div>
+          <h3 class="font-bold text-white text-base mb-2">Connexion Outils & Formulaires</h3>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            Configuration du simulateur de devis, redirection des demandes vers vos emails et test sur tous les smartphones.
+          </p>
+        </div>
+
+        <div class="bg-stone-800/60 p-6 rounded-2xl border border-stone-700">
+          <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-1">Semaine 3</div>
+          <h3 class="font-bold text-white text-base mb-2">Mise en Ligne & Référencement</h3>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            Bascule du nom de domaine bamschoulbecker.lu en toute transparence (zéro coupure), optimisation SEO local Google Steinsel.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-stone-800/80 border border-stone-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <div class="font-serif font-bold text-xl text-white">Formule Recommandée : Pack Excellence Becker</div>
+          <p class="text-xs text-stone-400">Site complet, 4 langues, simulateur interactif, hébergement ultra-sécurisé, maintenance & support.</p>
+        </div>
+        <div class="text-right">
+          <span class="text-xs text-stone-400 block">Investissement unique</span>
+          <span class="font-serif font-bold text-2xl text-emerald-400">3 800 € – 4 900 €</span>
+          <span class="text-[10px] text-stone-500 block">Rentabilisé dès le 1er nouveau contrat paysager</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: Action & Prochaine Étape -->
+    <div class="slide hidden w-full space-y-8 text-center" id="slide-6">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mx-auto">
+        <i data-lucide="rocket" class="w-4 h-4"></i>
+        <span>Prêt pour le Décollage</span>
+      </div>
+
+      <h2 class="font-serif text-4xl sm:text-6xl font-bold text-white max-w-3xl mx-auto">
+        Prêt à donner à Bamschoul Becker la vitrine qu'elle mérite ?
+      </h2>
+
+      <p class="text-base text-stone-300 max-w-2xl mx-auto">
+        Le prototype complet est déjà fonctionnel. Vous pouvez le tester immédiatement, le faire tester à vos équipes et préparer le lancement pour la saison horticole.
+      </p>
+
+      <div class="flex justify-center gap-4 pt-4">
+        <a href="index.html" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-4 rounded-xl text-base shadow-xl flex items-center gap-2 transition transform hover:scale-105">
+          <i data-lucide="eye" class="w-5 h-5"></i>
+          <span>Explorer la Démo Interactive en Plein Écran</span>
+        </a>
+      </div>
+
+      <div class="text-xs text-stone-500 pt-6">
+        Contact & Présentation réalisée pour Bamschoul Becker (Steinsel) • Novembre 2026
+      </div>
+    </div>
+
+  </main>
+
+  <!-- BOTTOM BAR / CONTROLS -->
+  <footer class="border-t border-stone-800 bg-black/40 backdrop-blur px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <button onclick="prevSlide()" class="p-2 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-200 transition">
+        <i data-lucide="chevron-left" class="w-5 h-5"></i>
+      </button>
+      <button onclick="nextSlide()" class="p-2 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-200 transition">
+        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+      </button>
+      <span class="text-xs text-stone-400 ml-2 hidden sm:inline">Utilisez les touches ◄ ► du clavier</span>
+    </div>
+
+    <!-- Slide Indicators -->
+    <div class="flex items-center gap-1.5" id="dots-container">
+      <button onclick="goToSlide(1)" class="w-2.5 h-2.5 rounded-full bg-emerald-500 dot"></button>
+      <button onclick="goToSlide(2)" class="w-2.5 h-2.5 rounded-full bg-stone-700 dot"></button>
+      <button onclick="goToSlide(3)" class="w-2.5 h-2.5 rounded-full bg-stone-700 dot"></button>
+      <button onclick="goToSlide(4)" class="w-2.5 h-2.5 rounded-full bg-stone-700 dot"></button>
+      <button onclick="goToSlide(5)" class="w-2.5 h-2.5 rounded-full bg-stone-700 dot"></button>
+      <button onclick="goToSlide(6)" class="w-2.5 h-2.5 rounded-full bg-stone-700 dot"></button>
+    </div>
+
+    <div class="text-xs text-stone-400">
+      Proposition Commerciale Confidentielle
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    let current = 1;
+    const total = 6;
+
+    function showSlide(n) {
+      if (n < 1) n = 1;
+      if (n > total) n = total;
+      current = n;
+
+      for (let i = 1; i <= total; i++) {
+        const slide = document.getElementById('slide-' + i);
+        if (slide) {
+          if (i === current) {
+            slide.classList.remove('hidden');
+          } else {
+            slide.classList.add('hidden');
+          }
+        }
+      }
+
+      document.getElementById('current-slide').innerText = current;
+
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, idx) => {
+        if (idx === current - 1) {
+          dot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-500 dot';
+        } else {
+          dot.className = 'w-2.5 h-2.5 rounded-full bg-stone-700 dot';
+        }
+      });
+    }
+
+    function nextSlide() {
+      if (current < total) showSlide(current + 1);
+    }
+
+    function prevSlide() {
+      if (current > 1) showSlide(current - 1);
+    }
+
+    function goToSlide(n) {
+      showSlide(n);
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+  </script>
+</body>
+</html>
